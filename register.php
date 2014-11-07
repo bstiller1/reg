@@ -14,27 +14,30 @@ if($_POST){
 if($_POST['first']){
 	$first = $_POST['first'];
 }else{
-	echo "Please enter your First Name.<br />";
+	echo "Please enter your First Name.<br />Go <a href='javascript:history.go(-1);' title='Back'>back</a> and enter your first name.";
 }
 if($_POST['last']){
 	$last = $_POST['last'];
 }else{
-	echo "Please enter your last Name.<br />";
+	echo "Please enter your last Name.<br />Go <a href='javascript:history.go(-1);' title='Back'>back</a> and enter your last name.";
 }
 if($_POST['email']){
 	$email = $_POST['email'];
+	// split the email address in to 2 array elements called $domain[]
 	$domain = explode("@", $email);
+	// check the second piece of the $domain[1] array for the
+	// domain to see if that web server has mail exchange records
 	if(@getmxrr($domain[1], $mxhosts) == FALSE){
-		echo "That Email Address is not valid.<br />";
+		echo "That Email Address is not valid.<br />Go <a href='javascript:history.go(-1);' title='Back'>back</a> and enter a valid email address.<br />";
 	}
 }else{
-	echo "Please enter your Email Address.<br />";
+	echo "Please enter your Email Address.<br />Go <a href='javascript:history.go(-1);' title='Back'>back</a> and enter an email address.<br />";
 }
 if($_POST['password']){
 	$password = $_POST['password'];
 	// check that password is more than 6 characters
 	if(strlen($password) < 6){
-	echo "Your password needs to be 6 or more characters in length.<br />";	
+	echo "Your password needs to be 6 or more characters in length.<br />Go <a href='javascript:history.go(-1);' title='Back'>back</a> and try again<br />.";	
 	} // end length check
 	// encrypt password using MD5
 	$md5password = md5($password);

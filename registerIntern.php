@@ -12,8 +12,8 @@
 <h3>New Intern Registration</h3>
 <form name="register" method="post" action="register.php">
 <p>Enter your name:<br /> First
-<input type="text" name="first" value="" />
-Last: <input type="text" name="last" /></p>
+<input type="text" name="first" value="" /></p>
+<p>Last: <input type="text" name="last" /></p>
 <p>Enter your e-mail address:
 <input type="text" name="email" /></p>
 <p>Enter a password for your account:

@@ -10,6 +10,7 @@ header("Location:registerIntern.php");
 
 <html>
 <body>
-Login Successful
+Login Successful<br />
+<a href="logout.php" title="Logout">Logout</a>
 </body>
 </html>
